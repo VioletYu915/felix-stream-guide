@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李龙馥音源站 · Felix Stream Guide</title>
+<meta name="description" content="Stray Kids 李龙馥 (Felix) 粉丝音源打榜教程站，包含各大音源平台操作教程、音源组织群入口与集资/账号购买渠道。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#7c3aed;
+  --primary-dark:#5b21b6;
+  --primary-light:#a855f7;
+  --accent:#f59e0b;
+  --accent-light:#fbbf24;
+  --bg:#faf8ff;
+  --bg-soft:#f3effe;
+  --card:#ffffff;
+  --text:#1f2937;
+  --text-light:#6b7280;
+  --border:#ede9fe;
+  --shadow:0 4px 24px rgba(124,58,237,.08);
+  --shadow-hover:0 12px 40px rgba(124,58,237,.18);
+  --radius:18px;
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins','Noto Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ===== NAV ===== */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow .3s;
+}
+.nav.scrolled{box-shadow:0 2px 16px rgba(124,58,237,.08)}
+.nav-inner{
+  max-width:var(--maxw);margin:0 auto;
+  padding:14px 24px;display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+.brand .dot{
+  width:30px;height:30px;border-radius:9px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-light));
+  display:grid;place-items:center;color:#fff;font-size:16px;
+  box-shadow:0 4px 12px rgba(124,58,237,.4);
+}
+.brand small{font-weight:400;color:var(--text-light);font-size:12px;display:block;letter-spacing:1px}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{
+  padding:8px 16px;border-radius:999px;font-size:14px;font-weight:500;
+  color:var(--text-light);transition:.2s;
+}
+.nav-links a:hover{color:var(--primary);background:var(--bg-soft)}
+.nav-links a.cta{background:var(--primary);color:#fff}
+.nav-links a.cta:hover{background:var(--primary-dark);color:#fff}
+.menu-btn{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--primary)}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;padding:140px 24px 90px;
+  background:
+    radial-gradient(900px 500px at 85% -5%, rgba(245,158,11,.16), transparent 60%),
+    radial-gradient(700px 480px at 8% 10%, rgba(124,58,237,.22), transparent 60%),
+    linear-gradient(180deg,#fbf9ff, var(--bg));
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(124,58,237,.06) 1.4px, transparent 1.4px);
+  background-size:26px 26px;opacity:.7;pointer-events:none;
+}
+.hero-inner{position:relative;max-width:var(--maxw);margin:0 auto;text-align:center}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--border);
+  padding:7px 16px;border-radius:999px;font-size:13px;font-weight:500;
+  color:var(--primary-dark);box-shadow:var(--shadow);margin-bottom:26px;
+}
+.badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(245,158,11,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,158,11,.6)}70%{box-shadow:0 0 0 10px rgba(245,158,11,0)}100%{box-shadow:0 0 0 0 rgba(245,158,11,0)}}
+.hero h1{
+  font-size:clamp(38px,7vw,76px);font-weight:800;line-height:1.05;
+  letter-spacing:-1.5px;margin-bottom:18px;
+}
+.hero h1 .grad{
+  background:linear-gradient(120deg,var(--primary),var(--primary-light) 55%,var(--accent));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero .kr{font-size:clamp(16px,2.4vw,22px);color:var(--primary-dark);font-weight:500;letter-spacing:3px;margin-bottom:14px}
+.hero p.sub{font-size:clamp(16px,2vw,20px);color:var(--text-light);max-width:640px;margin:0 auto 34px}
+.hero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:38px}
+.hero-tags span{
+  background:#fff;border:1px solid var(--border);padding:8px 16px;border-radius:999px;
+  font-size:13px;font-weight:500;color:var(--text-light);box-shadow:var(--shadow)
+}
+.hero-tags span b{color:var(--primary);font-weight:600}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border-radius:999px;font-weight:600;font-size:15px;
+  cursor:pointer;border:none;transition:.25s;
+}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;box-shadow:0 8px 22px rgba(124,58,237,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(124,58,237,.45)}
+.btn-ghost{background:#fff;color:var(--primary-dark);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg-soft);transform:translateY(-2px)}
+
+/* ===== SECTION ===== */
+.section{padding:90px 24px;position:relative}
+.section-inner{max-width:var(--maxw);margin:0 auto}
+.sec-head{text-align:center;margin-bottom:54px}
+.sec-emoji{font-size:34px;margin-bottom:8px}
+.sec-kicker{font-size:13px;font-weight:600;letter-spacing:3px;color:var(--primary);text-transform:uppercase}
+.sec-title{font-size:clamp(28px,4.5vw,42px);font-weight:800;letter-spacing:-1px;margin:6px 0 12px}
+.sec-desc{color:var(--text-light);max-width:600px;margin:0 auto;font-size:15px}
+
+/* ===== PLATFORM CARDS ===== */
+.grid{display:grid;gap:22px}
+.platform-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:26px;box-shadow:var(--shadow);transition:.3s;position:relative;overflow:hidden;
+}
+.card::after{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--primary),var(--primary-light));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s;
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);border-color:var(--primary-light)}
+.card:hover::after{transform:scaleX(1)}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.plat-icon{
+  width:54px;height:54px;border-radius:14px;display:grid;place-items:center;
+  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden;
+}
+.plat-icon img{width:72%;height:72%;object-fit:contain}
+.plat-icon.emoji-icon{font-size:26px;color:#fff}
+.plat-tag{font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--bg-soft);color:var(--primary-dark)}
+.plat-tag.core{background:#ede9fe;color:#5b21b6}
+.plat-tag.imp{background:#fef3c7;color:#b45309}
+.plat-tag.aux{background:#f3f4f6;color:#6b7280}
+.card h3{font-size:20px;font-weight:700;margin-bottom:4px}
+.card .kr-sm{font-size:13px;color:var(--text-light);margin-bottom:12px;letter-spacing:1px}
+.card p.desc{font-size:14px;color:var(--text-light);margin-bottom:18px;min-height:60px}
+.card-foot{display:flex;align-items:center;justify-content:space-between}
+.diff{display:flex;gap:3px;align-items:center;font-size:12px;color:var(--text-light)}
+.diff i{width:7px;height:7px;border-radius:2px;background:var(--border)}
+.diff i.on{background:var(--accent)}
+.card-btn{
+  display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;
+  color:var(--primary);cursor:pointer;border:none;background:none;
+}
+.card-btn:hover{gap:10px;transition:gap .2s}
+
+/* ===== TEAM / FUNDING ===== */
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.info-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px;box-shadow:var(--shadow);transition:.3s;
+}
+.info-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-4px)}
+.ic-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.ic-icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden}
+.ic-icon img{width:62%;height:62%;object-fit:contain}
+.info-card h3{font-size:19px;font-weight:700}
+.info-card .ic-sub{font-size:13px;color:var(--text-light)}
+.qr-box{
+  width:180px;height:180px;border-radius:16px;margin:8px auto 18px;
+  background:repeating-conic-gradient(#f3effe 0% 25%, #fff 0% 50%) 50%/18px 18px;
+  border:1px dashed var(--primary-light);display:grid;place-items:center;color:var(--text-light);font-size:13px;text-align:center;padding:14px;
+}
+.qr-box .placeholder-icon{font-size:30px;display:block;margin-bottom:6px}
+.link-row{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;border:1px solid var(--border);border-radius:12px;margin-bottom:12px;
+  background:#fff;transition:.2s;
+}
+.link-row:hover{border-color:var(--primary-light);background:var(--bg-soft)}
+.link-row .lr-left{display:flex;align-items:center;gap:12px;min-width:0}
+.link-row .lr-ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:18px;background:var(--bg-soft);flex-shrink:0}
+.link-row .lr-txt{min-width:0}
+.link-row .lr-txt b{font-size:14px;font-weight:600;display:block}
+.link-row .lr-txt span{font-size:12px;color:var(--text-light)}
+.link-row .go{color:var(--primary);font-size:18px;flex-shrink:0}
+.tip-note{
+  font-size:12px;color:var(--text-light);background:var(--bg-soft);
+  padding:10px 14px;border-radius:10px;margin-top:14px;border-left:3px solid var(--primary-light);
+}
+
+/* ===== STEPS / FAQ ===== */
+.faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:12px;background:#fff;overflow:hidden}
+.faq-q{padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px}
+.faq-q .arrow{transition:.3s;color:var(--primary)}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--text-light);font-size:14px}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:0 22px 18px}
+
+/* ===== MODAL ===== */
+.modal-mask{
+  position:fixed;inset:0;background:rgba(30,16,60,.55);backdrop-filter:blur(4px);
+  z-index:200;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;
+  overflow-y:auto;
+}
+.modal-mask.open{display:flex}
+.modal{
+  background:#fff;border-radius:22px;max-width:680px;width:100%;
+  box-shadow:0 30px 80px rgba(40,10,80,.4);animation:pop .3s ease;overflow:hidden;
+}
+@keyframes pop{from{transform:translateY(20px) scale(.97);opacity:0}to{transform:none;opacity:1}}
+.modal-head{
+  padding:26px 28px;color:#fff;position:relative;
+  background:linear-gradient(135deg,var(--primary),var(--primary-light));
+}
+.modal-head .m-logo{
+  width:46px;height:46px;border-radius:50%;background:#fff;
+  padding:8px;box-sizing:border-box;
+  box-shadow:0 4px 12px rgba(0,0,0,.18);
+  margin-bottom:8px;display:grid;place-items:center;
+}
+.modal-head .m-logo img{width:100%;height:100%;object-fit:contain}
+.modal-head .m-logo .emoji{font-size:24px;line-height:1}
+.modal-head h3{font-size:24px;font-weight:800}
+.modal-head .m-kr{font-size:13px;opacity:.85;letter-spacing:2px}
+.modal-close{
+  position:absolute;top:18px;right:18px;background:rgba(255,255,255,.2);
+  border:none;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px;
+}
+.modal-body{padding:28px;max-height:78vh;overflow-y:auto}
+.modal-intro{font-size:14px;color:var(--text-light);margin-bottom:16px;line-height:1.7}
+.modal-note{
+  background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:14px 16px;
+  font-size:13px;color:#9a3412;margin-bottom:18px;display:flex;gap:10px;
+}
+.modal-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.vpn-group{font-size:15px;font-weight:700;color:var(--primary-dark);margin:18px 0 10px}
+.vpn-group:first-child{margin-top:0}
+
+/* ===== 图片横向轮播 ===== */
+.carousel{position:relative;margin-top:6px}
+.car-viewport{overflow:hidden;border-radius:14px;background:var(--bg-soft)}
+.car-track{display:flex;transition:transform .35s ease}
+.car-slide{flex:0 0 100%;width:100%;min-height:360px;background:var(--bg-soft)}
+.car-slide img{
+  width:100%;height:auto;display:block;cursor:zoom-in;
+  background:var(--bg-soft);
+}
+.car-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border-radius:50%;border:none;
+  background:rgba(150,150,150,.5);color:#fff;font-size:24px;cursor:pointer;
+  display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.18);
+  transition:.2s;z-index:2;line-height:1;backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+}
+.car-btn:hover{background:rgba(110,110,110,.72)}
+.car-btn:disabled{opacity:.3;cursor:not-allowed}
+.car-btn.prev{left:8px}
+.car-btn.next{right:8px}
+.car-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:12px;font-size:13px;color:var(--text-light);
+}
+.car-count{font-weight:600;color:var(--primary-dark)}
+.car-dots{display:flex;gap:5px;flex-wrap:wrap;max-width:70%;justify-content:flex-end}
+.car-dots span{
+  width:8px;height:8px;border-radius:50%;background:var(--border);
+  cursor:pointer;transition:.25s;
+}
+.car-dots span.on{background:var(--primary);width:20px;border-radius:4px}
+.car-hint{font-size:12px;color:var(--text-light);text-align:center;margin-top:8px}
+
+/* ===== Lightbox 全屏放大 ===== */
+.lightbox{
+  position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.92);
+  display:none;align-items:center;justify-content:center;padding:20px;overflow:auto;
+}
+.lightbox.open{display:flex;animation:fadeIn .2s}
+.lightbox img{max-width:95vw;max-height:92vh;object-fit:contain;border-radius:8px}
+.lightbox-close{
+  position:absolute;top:18px;right:18px;background:rgba(255,255,255,.15);
+  border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:24px;cursor:pointer;
+}
+.lightbox-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:50px;height:50px;border-radius:50%;border:none;
+  background:rgba(255,255,255,.15);color:#fff;font-size:28px;cursor:pointer;
+}
+.lightbox-nav:hover{background:rgba(255,255,255,.28)}
+.lightbox-nav.prev{left:18px}
+.lightbox-nav.next{right:18px}
+.lightbox-count{
+  position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+  color:#fff;font-size:13px;background:rgba(0,0,0,.4);padding:5px 14px;border-radius:999px;
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ===== FOOTER ===== */
+.footer{
+  background:#2d1f55;color:#f0eaff;padding:60px 24px 30px;
+}
+.footer-inner{max-width:var(--maxw);margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-nav{padding-left:88px}
+.footer h4{color:#fff;font-size:15px;margin-bottom:14px;font-weight:600}
+.footer p,.footer li{font-size:13px;color:#e0d6ff;line-height:1.9}
+.footer ul{list-style:none}
+.footer a:hover{color:#fff}
+.disclaimer{
+  background:rgba(255,255,255,.05);border-radius:12px;padding:18px;
+  font-size:12px;color:#c8bce8;margin-bottom:24px;border-left:3px solid var(--accent);
+}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:#b8a8d8}
+.heart{color:var(--accent)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:860px){
+  .menu-btn{display:block}
+  .nav-links{
+    position:fixed;top:62px;left:0;right:0;background:#fff;flex-direction:column;
+    padding:14px;gap:6px;border-bottom:1px solid var(--border);transform:translateY(-130%);transition:.3s;align-items:stretch;
+  }
+  .nav-links.open{transform:none}
+  .nav-links a{padding:12px 16px}
+  .split-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:30px}
+  .footer-nav{padding-left:0}
+  .section{padding:64px 20px}
+  .hero{padding:120px 20px 70px}
+  .modal-mask{padding:0}
+  .modal{border-radius:0;min-height:100vh}
+  .modal-body{max-height:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="dot">🎧</span>
+      <span>李龙馥音源站<small>FELIX STREAM GUIDE</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#tutorial">音源教程</a>
+      <a href="#team">音源组织</a>
+      <a href="#funding" class="cta">立即打榜</a>
+      <a href="#download">下载安装</a>
+      <a href="#faq">常见问题</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="badge"><span class="pulse"></span> Stray Kids · FELIX 李龙馥 音源站</div>
+    <div class="kr">이용복 · FELIX</div>
+    <h1>李龙馥 <span class="grad">音源站</span></h1>
+    <p class="sub">为李龙馥粉丝准备的音源打榜一站式指南 —— 音源平台教程、音源组织群入口、集资与账号购买渠道，全部整理于此。一起为李龙馥的音源助力💜</p>
+    <div class="hero-tags">
+      <span>🎂 <b>2000.09.15</b></span>
+      <span>🎤 <b>Main Dancer</b></span>
+      <span>🎧 <b>重低音Rapper</b></span>
+      <span>🌏 <b>澳籍韩裔</b></span>
+      <span>✨ <b>Stray Kids</b></span>
+    </div>
+    <div class="hero-cta">
+      <a href="#tutorial" class="btn btn-primary">📖 查看音源教程</a>
+      <a href="#team" class="btn btn-ghost">👥 加入音源组织群</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 板块1 音源平台教程 ===== -->
+<section class="section" id="tutorial">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="sec-emoji">🎧</div>
+      <div class="sec-kicker">Streaming Guides</div>
+      <h2 class="sec-title">音源平台操作教程</h2>
+      <p class="sec-desc">点击任意平台查看教程，建议优先搞海外音源平台（Spotify / Melon / iTunes等），国内音源平台作为辅助。</p>
+    </div>
+
+    <div class="grid platform-grid" id="platformGrid">
+      <!-- 卡片由 JS 注入 -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== 板块2 粉丝音源组织群 ===== -->
+<section class="section" id="team" style="background:linear-gradient(180deg,var(--bg),#fff)">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="sec-emoji">👥</div>
+      <div class="sec-kicker">Stream Teams</div>
+      <h2 class="sec-title">粉丝音源组织群</h2>
+      <p class="sec-desc">加入组织群可与其他粉丝同步打榜任务、协调刷榜时间，效率更高。</p>
+    </div>
+
+    <div class="split-grid">
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon"><img src="icons/rednote.png" alt="小红书"></div>
+          <div>
+            <h3>小红书音源组织群</h3>
+            <div class="ic-sub">小红书群+微博群备用</div>
+          </div>
+        </div>
+        <div class="qr-box" style="background:#fff;padding:0">
+          <img src="qrcode/xiaohongshu.jpg" alt="小红书群二维码" style="width:100%;height:100%;object-fit:cover;border-radius:15px">
+        </div>
+        <a href="http://t.cn/AXJtpL8n" target="_blank" rel="noopener" class="link-row">
+          <div class="lr-left">
+            <div class="lr-ic">🔗</div>
+            <div class="lr-txt"><b>微博群跳转入口</b><span>点击加入微博群</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <div class="tip-note">📌 二维码有时效性，会不定时更新。如已过期请联系管理员或进微博群。</div>
+      </div>
+
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon"><img src="icons/wechat.png" alt="微信"></div>
+          <div>
+            <h3>微信音源组织群</h3>
+            <div class="ic-sub">微信审核群+备用群</div>
+          </div>
+        </div>
+        <div class="qr-box">
+          <span class="placeholder-icon">📷</span>
+          微信群二维码占位<br>请替换为实际群二维码图片
+        </div>
+        <a href="#" class="link-row" onclick="return placeholderLink(event)">
+          <div class="lr-left">
+            <div class="lr-ic">🔗</div>
+            <div class="lr-txt"><b>备用群入口</b><span>点击加入备用群（待替换）</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <div class="tip-note">📌 微信群超过 200 人需邀请进群，可联系管理员拉人。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 板块3 集资 & 买号 ===== -->
+<section class="section" id="funding">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="sec-emoji">💰</div>
+      <div class="sec-kicker">Funding & Shops</div>
+      <h2 class="sec-title">集资 · 账号购买渠道</h2>
+      <p class="sec-desc">粉丝站集资用于集体打榜；个人刷榜可向下方商家购买已注册好的音源平台账号，省去注册流程。</p>
+    </div>
+
+    <div class="split-grid">
+      <!-- 集资 -->
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">🎯</div>
+          <div>
+            <h3>粉丝站音源集资</h3>
+            <div class="ic-sub">集体打榜 · 音源众筹</div>
+          </div>
+        </div>
+        <a href="https://weidian.com/item.html?itemID=7816272106&wfr=c&sfr=app&source=goods_home" target="_blank" rel="noopener" class="link-row">
+          <div class="lr-left">
+            <div class="lr-ic">📋</div>
+            <div class="lr-txt"><b>菲首音源集资链接</b><span>微店 · 点击参与</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <a href="https://weidian.com/item.html?itemID=7813284073&wfr=c&source=goods_home&ifr=itemdetail&sfr=app" target="_blank" rel="noopener" class="link-row">
+          <div class="lr-left">
+            <div class="lr-ic">📋</div>
+            <div class="lr-txt"><b>宝石站音源集资链接</b><span>微店 · 点击参与</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <a href="https://weibo.com/6375947740/5322109723088007" target="_blank" rel="noopener" class="link-row">
+          <div class="lr-left">
+            <div class="lr-ic">📣</div>
+            <div class="lr-txt"><b>菲首生日集资微博</b><span>关注站子微博获取最新动态</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <a href="https://weibo.com/5947554719/5327226292938637" target="_blank" rel="noopener" class="link-row">
+          <div class="lr-left">
+            <div class="lr-ic">📣</div>
+            <div class="lr-txt"><b>宝石站生日集资微博</b><span>关注站子微博获取最新动态</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <div class="tip-note">⚠️ 集资请认准指定粉丝站账号，未成年人请在家长同意下参与。</div>
+      </div>
+
+      <!-- 商家 -->
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">🛒</div>
+          <div>
+            <h3>音源账号购买渠道</h3>
+            <div class="ic-sub">现成账号 · 即买即用</div>
+          </div>
+        </div>
+        <div class="link-row" onclick="copyTaobaoCode('【淘宝】https://e.tb.cn/h.84SjrWBcBzzi95a?tk=nRCOgwygzeZ CZ193 「sportify 声天破 spotity斯伯丁快无损音源 会员充值一年 不重置」\n点击链接直接打开 或者 淘宝搜索直接打开')" style="cursor:pointer">
+          <div class="lr-left">
+            <div class="lr-ic">🟢</div>
+            <div class="lr-txt"><b>Spotify 号</b><span>复制口令 · 打开淘宝</span></div>
+          </div>
+          <span class="go" style="display:none"></span>
+        </div>
+        <div class="link-row" onclick="copyTaobaoCode('【淘宝】https://e.tb.cn/h.8TTx6MGlTjblIYI?tk=ffX4gyNuhEQ MF168 「7.31  定制」\n点击链接直接打开 或者 淘宝搜索直接打开')" style="cursor:pointer">
+          <div class="lr-left">
+            <div class="lr-ic">🍈</div>
+            <div class="lr-txt"><b>Melon 号</b><span>复制口令 · 打开淘宝</span></div>
+          </div>
+          <span class="go" style="display:none"></span>
+        </div>
+        <a href="#" class="link-row" onclick="return placeholderLink(event)">
+          <div class="lr-left">
+            <div class="lr-ic">🍈</div>
+            <div class="lr-txt"><b>Melon 代切</b><span>待替换</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <a href="#" class="link-row" onclick="openVpnModal();return false;">
+          <div class="lr-left">
+            <div class="lr-ic">✈️</div>
+            <div class="lr-txt"><b>梯子推荐</b><span>点击查看</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <div class="tip-note">⚠️ 本站仅整理粉丝站提供的购买渠道信息，不参与交易售后。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 下载安装 ===== -->
+<section class="section" id="download" style="background:linear-gradient(180deg,#fff,var(--bg))">
+  <div class="section-inner">
+    <div class="sec-head">
+      <div class="sec-emoji">📲</div>
+      <div class="sec-kicker">Download & Install</div>
+      <h2 class="sec-title">下载安装</h2>
+      <p class="sec-desc">安卓用户直接下载 APK 安装；苹果用户需对应区域的 Apple ID 才能下载海外音源 App。</p>
+    </div>
+    <div class="split-grid">
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">🤖</div>
+          <div>
+            <h3>安卓 APK 下载</h3>
+            <div class="ic-sub">点击下载安装包</div>
+          </div>
+        </div>
+        <a class="link-row" href="https://wwbcx.lanzout.com/iOx3w410zxdc" target="_blank" rel="noopener">
+          <div class="lr-left">
+            <div class="lr-ic">📦</div>
+            <div class="lr-txt"><b>安大师</b><span>提取码：ftij · 蓝奏云下载</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <a class="link-row" href="https://wwbcx.lanzout.com/iy08p41101wf" target="_blank" rel="noopener">
+          <div class="lr-left">
+            <div class="lr-ic">📦</div>
+            <div class="lr-txt"><b>Melon</b><span>提取码：g6ia · 蓝奏云下载</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <div class="tip-note">📌 安卓安装时需开启「允许未知来源应用」。下载链接为蓝奏云，需输入提取码。所有需要用到的海外 App 均可通过安大师进行安装。</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-head">
+          <div class="ic-icon">🍎</div>
+          <div>
+            <h3>苹果 ID 指引</h3>
+            <div class="ic-sub">需对应区域 Apple ID</div>
+          </div>
+        </div>
+        <a class="link-row" href="#" onclick="openVpnModal();return false;">
+          <div class="lr-left">
+            <div class="lr-ic">🇺🇸</div>
+            <div class="lr-txt"><b>美区 ID</b><span>见梯子商家提供（点击查看梯子推荐）</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <a class="link-row" href="#team">
+          <div class="lr-left">
+            <div class="lr-ic">🇰🇷</div>
+            <div class="lr-txt"><b>韩区 ID</b><span>由音源组织群提供（点击加入组织群）</span></div>
+          </div>
+          <span class="go">↗</span>
+        </a>
+        <div class="tip-note">📌 切换 Apple ID 区域：App Store → 头像 → 退出 → 登录海外账号。下载完所需 App 后请切回自己的国区账号，请勿影响其他人登录使用海外账号。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq" style="background:linear-gradient(180deg,#fff,var(--bg))">
+  <div class="section-inner" style="max-width:820px">
+    <div class="sec-head">
+      <div class="sec-emoji">❓</div>
+      <div class="sec-kicker">FAQ</div>
+      <h2 class="sec-title">常见问题</h2>
+    </div>
+    <div id="faqList">
+      <div class="faq-item">
+        <div class="faq-q">优先刷哪个平台？<span class="arrow">⌄</span></div>
+        <div class="faq-a"><div class="faq-a-inner">核心平台优先：Spotify、Stationhead、Melon、iTunes（计入全球榜/韩国榜/销量榜等）；其次重要平台 YouTube Music、Apple Music；国内 QQ音乐、网易云音乐作为辅助。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">为什么更建议挂电台刷流媒？<span class="arrow">⌄</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Stationhead 是合规的社交电台 App，播放会同步计入 Spotify / Apple Music 真实流媒数据；支持邀请好友加入 listening party 多人同时听叠加流媒计数；是粉丝组织回归期的主推工具，回归首日冲榜效率最高；比单纯死循环刷 Spotify 更安全，平台反作弊更宽松。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">自己注册账号好还是买现成账号好？<span class="arrow">⌄</span></div>
+        <div class="faq-a"><div class="faq-a-inner">韩国平台注册需要韩国手机号和身份验证，流程较繁琐，如果只想快速参与打榜，购买商家已注册好的Melon现号更省事。如需长期使用Spotify刷流媒，可以自己注册Spotify并养号，需要会员时可通过推荐商家购买充值服务，更安全稳定。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">刷音源会被判定为异常吗？<span class="arrow">⌄</span></div>
+        <div class="faq-a"><div class="faq-a-inner">会。平台有反作弊机制，重复单曲循环、同一账号高频播放、使用脚本刷量都可能被过滤甚至封号。请遵循音源组织群的打榜指南，正常听歌、随机切歌、配合休息，模拟真实用户行为。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">免费用户和订阅会员有什么区别？<span class="arrow">⌄</span></div>
+        <div class="faq-a"><div class="faq-a-inner">免费用户在 Spotify、YouTube Music 等平台也能播放并计入榜单，但有广告中断、不能任意切歌、音质较低等限制；Apple Music、Melon 等平台则无免费版，必须订阅才能播放。订阅会员无广告、可下载、音质高，更重要的是付费播放权重更高，部分榜单（如 Melon）只计付费播放。回归期冲榜建议至少订阅核心平台会员。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="about">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <h4>💜 关于本站</h4>
+        <p>本站为散粉自发整理的非营利性音源教程站，旨在帮助所有李龙馥粉丝更高效地为李龙馥 (Felix) 打榜音源。所有内容仅供学习交流，不涉及任何商业用途。</p>
+      </div>
+      <div class="footer-nav">
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="#tutorial">音源平台教程</a></li>
+          <li><a href="#team">音源组织群</a></li>
+          <li><a href="#funding">集资与买号</a></li>
+          <li><a href="#download">下载安装</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关注我们</h4>
+        <ul>
+          <li><a href="#" onclick="return placeholderLink(event)">微博 @待替换</a></li>
+          <li><a href="#" onclick="return placeholderLink(event)">小红书 @待替换</a></li>
+          <li><a href="#" onclick="return placeholderLink(event)">Twitter @待替换</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer">
+      ⚠️ <b>免责声明：</b>本站仅提供信息整理与教程指引，不持有、不售卖任何音源账号，不直接收取集资款项。李龙馥及 Stray Kids 相关权益归 JYP Entertainment 所有，本站与官方无隶属关系。如认为内容侵权请联系站长删除。
+    </div>
+    <div class="footer-bottom">
+      Made with <span class="heart">💜</span> for FELIX & PIXIES · © 2026 李龙馥音源站 · 仅供粉丝学习交流
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-mask" id="modal">
+  <div class="modal">
+    <div class="modal-head" id="modalHead">
+      <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
+      <div class="m-logo" id="modalLogo"><img id="modalLogoImg" src="" alt=""></div>
+      <h3 id="modalTitle">平台教程</h3>
+      <div class="m-kr" id="modalKr">PLATFORM</div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ===== Lightbox ===== -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose" aria-label="关闭">×</button>
+  <button class="lightbox-nav prev" id="lbPrev" aria-label="上一张">‹</button>
+  <img id="lbImg" src="" alt="教程大图">
+  <button class="lightbox-nav next" id="lbNext" aria-label="下一张">›</button>
+  <div class="lightbox-count" id="lbCount"></div>
+</div>
+
+<!-- ===== 梯子推荐弹窗 ===== -->
+<div class="modal-mask" id="vpnModal">
+  <div class="modal">
+    <div class="modal-head" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">
+      <button class="modal-close" id="vpnClose" aria-label="关闭">×</button>
+      <div class="m-emoji">🚀</div>
+      <h3>梯子推荐</h3>
+      <div class="m-kr">VPN RECOMMEND</div>
+    </div>
+    <div class="modal-body">
+      <h4 class="vpn-group">💰 价格最便宜</h4>
+      <a class="link-row" href="https://dokidokiweb.com/" target="_blank" rel="noopener">
+        <div class="lr-left"><div class="lr-ic">🌸</div>
+        <div class="lr-txt"><b>樱花猫</b><span>dokidokiweb.com</span></div></div>
+        <span class="go">↗</span></a>
+      <a class="link-row" href="https://sos.d9s.one/" target="_blank" rel="noopener">
+        <div class="lr-left"><div class="lr-ic">🦄</div>
+        <div class="lr-txt"><b>独角兽</b><span>sos.d9s.one · 体感比樱花猫稳，而且不限设备</span></div></div>
+        <span class="go">↗</span></a>
+      <h4 class="vpn-group">✨ 使用体验更好</h4>
+      <a class="link-row" href="https://ikuuu.club/" target="_blank" rel="noopener">
+        <div class="lr-left"><div class="lr-ic">🔵</div>
+        <div class="lr-txt"><b>iKuuu</b><span>ikuuu.club</span></div></div>
+        <span class="go">↗</span></a>
+      <a class="link-row" href="https://catpro.uk/" target="_blank" rel="noopener">
+        <div class="lr-left"><div class="lr-ic">🐱</div>
+        <div class="lr-txt"><b>Catpro</b><span>catpro.uk</span></div></div>
+        <span class="go">↗</span></a>
+      <a class="link-row" href="https://pub.bigmeok.me/" target="_blank" rel="noopener">
+        <div class="lr-left"><div class="lr-ic">🐻</div>
+        <div class="lr-txt"><b>BigME</b><span>pub.bigmeok.me</span></div></div>
+        <span class="go">↗</span></a>
+      <a class="link-row" href="https://hello-ssone.com/" target="_blank" rel="noopener">
+        <div class="lr-left"><div class="lr-ic">🌟</div>
+        <div class="lr-txt"><b>SSONE</b><span>hello-ssone.com</span></div></div>
+        <span class="go">↗</span></a>
+      <div class="tip-note">⚠️ 梯子仅用于访问海外音源平台，请遵守当地法律法规。美区 Apple ID 可向梯子商家获取。</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== 平台数据 ===== */
+/* level: core 核心 / imp 重要 / aux 辅助 */
+const platforms = [
+  /* ---- 核心平台 ---- */
+  {
+    id:'spotify', emoji:'🟢', name:'Spotify', kr:'스포티파이', color:'#1db954', level:'core', diff:2,
+    imgDir:'Spotify', imgCount:0,
+    docUrl:'https://my.feishu.cn/docx/EwVwd4iEOowgODx9121cSckmnlg',
+    desc:'全球最大流媒体平台，计入 Billboard 全球榜，海外打榜主力，免费即可参与。',
+    note:'免费用户可在Spotify上搜索FELIX Stream Station，使用海外音源站建立的歌单刷流媒。记得关注Felix的Spotify艺人主页。'
+  },
+  {
+    id:'stationhead', emoji:'📻', name:'Stationhead', kr:'스테이션헤드', color:'#ff5500', level:'core', diff:1,
+    imgDir:'Stationhead', imgCount:0, emojiIcon:true,
+    docUrl:'https://my.feishu.cn/docx/CVIfdNpLNoL9f8xcpFKcJ4Lwn1f',
+    desc:'粉丝刷流媒神器，播放会同步计入 Spotify / Apple Music 真实流媒，组织群常用工具。',
+    note:'电脑端可登录网页链接https://www.stationhead.com/felixradio使用。'
+  },
+  {
+    id:'melon', emoji:'🍉', name:'Melon', kr:'멜론', color:'#00cd3c', level:'core', diff:3,
+    imgDir:'Melon', imgCount:0, emojiIcon:true,
+    docUrl:'https://my.feishu.cn/docx/T7Wjd6uvpo8XxuxY6hicyjuWnKe',
+    desc:'韩国最大音源平台，打歌一位权重最高，回归期必刷的核心阵地。',
+    note:'Melon 反作弊严格，禁止脚本/挂机/重复循环，违规播放会被过滤且可能封号。Melon搜索歌名找不到时可搜索Felix韩文名필릭스来找歌曲。'
+  },
+  {
+    id:'itunes', emoji:'💿', name:'iTunes', kr:'아이튠즈', color:'#9b4dff', level:'core', diff:3,
+    imgDir:'iTunes', imgCount:0,
+    docUrl:'https://my.feishu.cn/docx/IdIddSBxFoqh8LxFkv2cYmEWnrj',
+    desc:'数字单曲购买平台，购买计入 Billboard 销量榜，回归首日冲销量的关键渠道。',
+    note:'iTunes 必须付费购买才能计入销量榜，需要海外 Apple ID，国区账号无法使用。'
+  },
+  /* ---- 重要平台 ---- */
+  {
+    id:'apple', emoji:'🍎', name:'Apple Music', kr:'애플 뮤직', color:'#fc5c7d', level:'imp', diff:2,
+    imgDir:'Apple music', imgCount:0,
+    docUrl:'https://my.feishu.cn/docx/Ou1gdaOJ0oIHgIxszIFcT8vXnXf',
+    desc:'计入 Billboard 全球榜，iOS 用户打榜方便，需付费订阅。',
+    note:'Apple Music 必须付费订阅，播放才计入榜单。优先使用美区账号。'
+  },
+  {
+    id:'youtube', emoji:'▶️', name:'YouTube Music', kr:'유튜브 뮤직', color:'#ff0000', level:'imp', diff:2,
+    imgDir:'YouTube Music', imgCount:0,
+    docUrl:'https://my.feishu.cn/docx/PVB6dFM0roBN2UxMWipcMSNRnme',
+    desc:'计入 Billboard 全球榜，海外粉丝主力渠道，免费即可参与。',
+    note:'可在YouTube上搜索关注FELIX Stream Station，使用海外音源站提供的播放列表刷流媒。'
+  },
+  /* ---- 辅助平台 ---- */
+  {
+    id:'qqmusic', emoji:'🎶', name:'QQ音乐', kr:'QQ Music', color:'#31c27c', level:'aux', diff:1,
+    imgDir:'QQ音乐', imgCount:0,
+    docUrl:'https://my.feishu.cn/docx/Hbs4d0Le4ooYFdxwhDxc2UVQnSI',
+    desc:'国内主流音源平台，计入部分中文榜单，作为国内辅助支持渠道。',
+    note:'国内平台权重较低，仅作辅助支持，回归期仍以核心海外平台为主。'
+  },
+  {
+    id:'netease', emoji:'☁️', name:'网易云音乐', kr:'NetEase Music', color:'#c20c0c', level:'aux', diff:1,
+    imgDir:'网易云音乐', imgCount:0,
+    docUrl:'https://my.feishu.cn/docx/TJOBdHRkxoY5daxYy28cpoxGnKc',
+    desc:'国内平台，计入部分榜单，评论区互动可提升热度，辅助渠道。',
+    note:'国内平台权重较低，仅作辅助支持，建议配合核心平台一起打榜。'
+  }
+];
+
+const levelText = {core:'🔥 核心', imp:'⭐ 重要', aux:'🪐 辅助'};
+
+/* ===== 渲染平台卡片 ===== */
+const grid = document.getElementById('platformGrid');
+platforms.forEach(p=>{
+  let diffHtml = '';
+  for(let i=0;i<3;i++){ diffHtml += `<i class="${i<p.diff?'on':''}"></i>`; }
+  const card = document.createElement('div');
+  card.className='card';
+  card.innerHTML = `
+    <div class="card-top">
+      ${p.emojiIcon
+        ? `<div class="plat-icon emoji-icon" style="background:${p.color}">${p.emoji}</div>`
+        : `<div class="plat-icon"><img src="icons/${p.id}.png" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.parentNode.innerHTML='${p.emoji}'"></div>`}
+      <span class="plat-tag ${p.level}">${levelText[p.level]}</span>
+    </div>
+    <h3>${p.name}</h3>
+    <div class="kr-sm">${p.kr}</div>
+    <p class="desc">${p.desc}</p>
+    <div class="card-foot">
+      <div class="diff">难度 ${diffHtml}</div>
+      <button class="card-btn" data-id="${p.id}">查看教程 →</button>
+    </div>
+  `;
+  card.querySelector('.card-btn').addEventListener('click',()=>openModal(p));
+  grid.appendChild(card);
+});
+
+/* ===== 模态框 + 横向轮播 ===== */
+const modal = document.getElementById('modal');
+let currentPlatform = null;
+let carIndex = 0;
+
+function imgSrc(p,i){
+  return `${p.imgDir}/${i}.jpg`;
+}
+
+function openModal(p){
+  currentPlatform = p;
+  carIndex = 0;
+  const logoBox = document.getElementById('modalLogo');
+  if(p.emojiIcon){
+    logoBox.innerHTML = '<span class="emoji">'+p.emoji+'</span>';
+  } else {
+    logoBox.innerHTML = '<img src="icons/'+p.id+'.png" alt="'+p.name+'" onerror="this.style.display=\'none\'">';
+  }
+  document.getElementById('modalTitle').textContent = p.name + ' 教程';
+  document.getElementById('modalKr').textContent = p.kr + ' · GUIDE';
+  document.getElementById('modalHead').style.background = `linear-gradient(135deg,${p.color},${p.color}cc)`;
+
+  let slides = '';
+  for(let i=1;i<=p.imgCount;i++){
+    slides += `<div class="car-slide"><img data-src="${imgSrc(p,i)}" alt="${p.name} 教程 ${i}" data-i="${i}"></div>`;
+  }
+  let dotsHtml = '';
+  for(let i=0;i<p.imgCount;i++){
+    dotsHtml += `<span class="${i===0?'on':''}" data-i="${i}"></span>`;
+  }
+
+  const tutorialBlock = p.docUrl
+    ? `<a href="${p.docUrl}" target="_blank" rel="noopener" style="display:block;margin:20px 0;font-size:15px;font-weight:600;color:#1f2937;font-style:italic;text-decoration:underline;text-underline-offset:4px">📖 打开教程文档</a>`
+    : `<div class="carousel" id="carousel">
+        <button class="car-btn prev" id="carPrev" aria-label="上一张">‹</button>
+        <div class="car-viewport" id="carViewport">
+          <div class="car-track" id="carTrack">${slides}</div>
+        </div>
+        <button class="car-btn next" id="carNext" aria-label="下一张">›</button>
+      </div>
+      <div class="car-meta">
+        <span class="car-count" id="carCount">1 / ${p.imgCount}</span>
+        <div class="car-dots" id="carDots">${dotsHtml}</div>
+      </div>
+      <div class="car-hint">← 左右滑动 / 点击图片放大 →</div>`;
+
+  const body = `
+    <p class="modal-intro">${p.desc}</p>
+    ${p.note?`<div class="modal-note">⚠️ ${p.note}</div>`:''}
+    ${tutorialBlock}
+    <div class="modal-cta">
+      <a href="#team" class="btn btn-ghost" onclick="closeModal()">👥 加入音源组织群</a>
+      <a href="#funding" class="btn btn-primary" onclick="closeModal()">💰 购买账号/集资</a>
+    </div>
+  `;
+  document.getElementById('modalBody').innerHTML = body;
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+  if(!p.docUrl) bindCarousel(p);
+}
+
+function bindCarousel(p){
+  const track = document.getElementById('carTrack');
+  const viewport = document.getElementById('carViewport');
+  const prevBtn = document.getElementById('carPrev');
+  const nextBtn = document.getElementById('carNext');
+  const countEl = document.getElementById('carCount');
+  const dots = document.getElementById('carDots');
+  const total = p.imgCount;
+
+  function loadSlide(i){
+    if(i<0 || i>=total) return;
+    const img = track.querySelectorAll('.car-slide img')[i];
+    if(img && !img.src) img.src = img.dataset.src;
+  }
+  function update(){
+    track.style.transform = `translateX(-${carIndex*100}%)`;
+    countEl.textContent = `${carIndex+1} / ${total}`;
+    prevBtn.disabled = carIndex===0;
+    nextBtn.disabled = carIndex===total-1;
+    dots.querySelectorAll('span').forEach((d,i)=>d.classList.toggle('on',i===carIndex));
+    loadSlide(carIndex);
+    loadSlide(carIndex+1);
+  }
+  prevBtn.onclick = ()=>{ if(carIndex>0){carIndex--;update();} };
+  nextBtn.onclick = ()=>{ if(carIndex<total-1){carIndex++;update();} };
+  dots.querySelectorAll('span').forEach(d=>{
+    d.onclick = ()=>{ carIndex=+d.dataset.i; update(); };
+  });
+
+  /* 触摸滑动 */
+  let startX=0, startY=0;
+  viewport.addEventListener('touchstart',e=>{
+    startX=e.touches[0].clientX; startY=e.touches[0].clientY;
+  },{passive:true});
+  viewport.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-startX;
+    const dy=e.changedTouches[0].clientY-startY;
+    if(Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)){
+      if(dx>0 && carIndex>0){carIndex--;update();}
+      else if(dx<0 && carIndex<total-1){carIndex++;update();}
+    }
+  },{passive:true});
+
+  /* 点击图片 → lightbox */
+  viewport.querySelectorAll('img').forEach(img=>{
+    img.onclick = ()=> openLightbox(p, +img.dataset.i - 1);
+  });
+
+  update();
+}
+
+/* ===== Lightbox 全屏 ===== */
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCount = document.getElementById('lbCount');
+let lbIndex = 0;
+
+function openLightbox(p, i){
+  lbIndex = i;
+  lbImg.src = imgSrc(p, i+1);
+  lbCount.textContent = `${i+1} / ${p.imgCount}`;
+  lightbox.classList.add('open');
+}
+function lbShow(p, i){
+  lbIndex = (i + p.imgCount) % p.imgCount;
+  lbImg.src = imgSrc(p, lbIndex+1);
+  lbCount.textContent = `${lbIndex+1} / ${p.imgCount}`;
+}
+document.getElementById('lbClose').onclick = ()=> lightbox.classList.remove('open');
+document.getElementById('lbPrev').onclick = ()=>{ if(currentPlatform) lbShow(currentPlatform, lbIndex-1); };
+document.getElementById('lbNext').onclick = ()=>{ if(currentPlatform) lbShow(currentPlatform, lbIndex+1); };
+lightbox.addEventListener('click',e=>{ if(e.target===lightbox) lightbox.classList.remove('open'); });
+
+/* ===== 关闭逻辑 ===== */
+function closeModal(){ modal.classList.remove('open'); lightbox.classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('modalClose').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(document.getElementById('vpnModal').classList.contains('open')) closeVpnModal();
+    else if(lightbox.classList.contains('open')) lightbox.classList.remove('open');
+    else if(modal.classList.contains('open')) closeModal();
+  }
+  /* 模态框内左右键翻页 */
+  if(modal.classList.contains('open') && !lightbox.classList.contains('open') && currentPlatform){
+    if(e.key==='ArrowLeft' && carIndex>0){carIndex--;document.getElementById('carTrack').style.transform=`translateX(-${carIndex*100}%)`;document.getElementById('carCount').textContent=`${carIndex+1} / ${currentPlatform.imgCount}`;document.getElementById('carPrev').disabled=carIndex===0;document.getElementById('carNext').disabled=carIndex===currentPlatform.imgCount-1;document.getElementById('carDots').querySelectorAll('span').forEach((d,i)=>d.classList.toggle('on',i===carIndex));}
+    if(e.key==='ArrowRight' && carIndex<currentPlatform.imgCount-1){carIndex++;document.getElementById('carTrack').style.transform=`translateX(-${carIndex*100}%)`;document.getElementById('carCount').textContent=`${carIndex+1} / ${currentPlatform.imgCount}`;document.getElementById('carPrev').disabled=carIndex===0;document.getElementById('carNext').disabled=carIndex===currentPlatform.imgCount-1;document.getElementById('carDots').querySelectorAll('span').forEach((d,i)=>d.classList.toggle('on',i===carIndex));}
+  }
+});
+
+/* ===== FAQ 折叠 ===== */
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+/* ===== 导航交互 ===== */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',window.scrollY>10); });
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+/* ===== 梯子推荐弹窗 ===== */
+function openVpnModal(){
+  document.getElementById('vpnModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeVpnModal(){
+  document.getElementById('vpnModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('vpnClose').addEventListener('click',closeVpnModal);
+document.getElementById('vpnModal').addEventListener('click',e=>{if(e.target.id==='vpnModal')closeVpnModal();});
+
+/* ===== 占位链接提示 ===== */
+function placeholderLink(e){
+  e.preventDefault();
+  alert('🔗 此处为占位链接\n\n请将 href 替换为实际地址：\n· 组织群：替换为 QQ/微信群链接或群号\n· 集资：替换为摩点/微打赏链接\n· 商家：替换为商家店铺链接');
+  return false;
+}
+
+/* ===== 淘宝口令复制 ===== */
+function copyTaobaoCode(code){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(code).then(()=>showCopyToast(code));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = code;
+    ta.style.cssText = 'position:fixed;left:-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showCopyToast(code);
+  }
+}
+function showCopyToast(code){
+  const toast = document.createElement('div');
+  toast.textContent = '✅ 口令已复制，打开淘宝App即可弹出商品';
+  toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:14px 24px;border-radius:12px;font-size:14px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.25);animation:fadeIn .3s';
+  document.body.appendChild(toast);
+  setTimeout(()=>{ toast.style.opacity='0'; toast.style.transition='opacity .4s'; setTimeout(()=>toast.remove(),400); },2200);
+}
+</script>
+</body>
+</html>
