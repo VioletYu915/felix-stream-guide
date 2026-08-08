@@ -720,31 +720,31 @@ img{max-width:100%;display:block}
     </div>
     <div class="modal-body">
       <h4 class="vpn-group">价格最便宜：</h4>
-      <a class="link-row" href="https://dokidokiweb.com/" target="_blank" rel="noopener">
+      <div class="link-row" onclick="copyVpnUrl('https://dokidokiweb.com/')" style="cursor:pointer">
         <div class="lr-left"><div class="lr-ic">🌸</div>
         <div class="lr-txt"><b>樱花猫</b><span>dokidokiweb.com</span></div></div>
-        <span class="go">↗</span></a>
-      <a class="link-row" href="https://sos.d9s.one/" target="_blank" rel="noopener">
+        <span class="go" style="display:none"></span></div>
+      <div class="link-row" onclick="copyVpnUrl('https://sos.d9s.one/')" style="cursor:pointer">
         <div class="lr-left"><div class="lr-ic">🦄</div>
         <div class="lr-txt"><b>独角兽</b><span>sos.d9s.one · 体感比樱花猫稳，而且不限设备</span></div></div>
-        <span class="go">↗</span></a>
+        <span class="go" style="display:none"></span></div>
       <h4 class="vpn-group">使用体验更好：</h4>
-      <a class="link-row" href="https://ikuuu.club/" target="_blank" rel="noopener">
+      <div class="link-row" onclick="copyVpnUrl('https://ikuuu.club/')" style="cursor:pointer">
         <div class="lr-left"><div class="lr-ic">🔵</div>
         <div class="lr-txt"><b>iKuuu</b><span>ikuuu.club</span></div></div>
-        <span class="go">↗</span></a>
-      <a class="link-row" href="https://catpro.uk/" target="_blank" rel="noopener">
+        <span class="go" style="display:none"></span></div>
+      <div class="link-row" onclick="copyVpnUrl('https://catpro.uk/')" style="cursor:pointer">
         <div class="lr-left"><div class="lr-ic">🐱</div>
         <div class="lr-txt"><b>Catpro</b><span>catpro.uk</span></div></div>
-        <span class="go">↗</span></a>
-      <a class="link-row" href="https://pub.bigmeok.me/" target="_blank" rel="noopener">
+        <span class="go" style="display:none"></span></div>
+      <div class="link-row" onclick="copyVpnUrl('https://pub.bigmeok.me/')" style="cursor:pointer">
         <div class="lr-left"><div class="lr-ic">🍚</div>
         <div class="lr-txt"><b>BigME</b><span>pub.bigmeok.me</span></div></div>
-        <span class="go">↗</span></a>
-      <a class="link-row" href="https://hello-ssone.com/" target="_blank" rel="noopener">
+        <span class="go" style="display:none"></span></div>
+      <div class="link-row" onclick="copyVpnUrl('https://hello-ssone.com/')" style="cursor:pointer">
         <div class="lr-left"><div class="lr-ic">🌳</div>
         <div class="lr-txt"><b>SSONE</b><span>hello-ssone.com</span></div></div>
-        <span class="go">↗</span></a>
+        <span class="go" style="display:none"></span></div>
       <div class="tip-note">⚠️ 梯子仅用于访问海外音源平台，请遵守当地法律法规。美区 Apple ID 可向梯子商家获取。</div>
     </div>
   </div>
@@ -1034,7 +1034,7 @@ function placeholderLink(e){
 /* ===== 淘宝口令复制 ===== */
 function copyTaobaoCode(code){
   if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(code).then(()=>showCopyToast(code));
+    navigator.clipboard.writeText(code).then(()=>showCopyToast('口令已复制，打开淘宝App即可弹出商品'));
   } else {
     const ta = document.createElement('textarea');
     ta.value = code;
@@ -1043,15 +1043,29 @@ function copyTaobaoCode(code){
     ta.select();
     document.execCommand('copy');
     document.body.removeChild(ta);
-    showCopyToast(code);
+    showCopyToast('口令已复制，打开淘宝App即可弹出商品');
   }
 }
-function showCopyToast(code){
+function showCopyToast(msg){
   const toast = document.createElement('div');
-  toast.textContent = '✅ 口令已复制，打开淘宝App即可弹出商品';
+  toast.textContent = msg || '✅ 已复制';
   toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:14px 24px;border-radius:12px;font-size:14px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.25);animation:fadeIn .3s';
   document.body.appendChild(toast);
   setTimeout(()=>{ toast.style.opacity='0'; toast.style.transition='opacity .4s'; setTimeout(()=>toast.remove(),400); },2200);
+}
+function copyVpnUrl(url){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(()=>showCopyToast('链接已复制，请在浏览器中打开'));
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = url;
+    ta.style.cssText = 'position:fixed;left:-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showCopyToast('链接已复制，请在浏览器中打开');
+  }
 }
 </script>
 </body>
