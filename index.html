@@ -629,7 +629,7 @@ img{max-width:100%;display:block}
     <div id="faqList">
       <div class="faq-item">
         <div class="faq-q">优先刷哪个音源平台？<span class="arrow">⌄</span></div>
-        <div class="faq-a"><div class="faq-a-inner">核心平台优先：Spotify、Melon、iTunes（计入全球榜/韩国榜/销量榜等）；其次重要平台 YouTube Music、Apple Music；国内 QQ音乐、网易云音乐作为辅助。整体任务优先级：Spotify ＞ Melon ＞ iTunes/AM/YouTube ＞ Q音=网易云。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">核心平台优先：Spotify、Melon、iTunes（计入全球榜/韩国榜/销量榜等）；其次重要平台 YouTube Music、Apple Music；国内平台 QQ音乐、网易云音乐作为辅助。整体任务优先级：Spotify ＞ Melon ＞ iTunes/AM/YouTube ＞ Q音=网易云。</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">为什么更建议挂电台刷流媒？<span class="arrow">⌄</span></div>
@@ -641,7 +641,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="faq-item">
         <div class="faq-q">刷音源会被判定为异常吗？<span class="arrow">⌄</span></div>
-        <div class="faq-a"><div class="faq-a-inner">平台有反作弊机制，重复单曲循环、同一账号高频播放、使用脚本刷量都可能被过滤甚至封号。请遵循音源组织群的打榜指南，正常听歌、随机切歌、配合休息，模拟真实用户行为。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">平台有反作弊机制，重复单曲循环、同一账号高频播放、使用脚本刷量都有可能被过滤甚至封号。请遵循音源组织群的教程指引，正常听歌、随机切歌、配合休息，模拟真实用户行为。</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">免费用户和订阅会员有什么区别？<span class="arrow">⌄</span></div>
@@ -901,6 +901,7 @@ function openModal(p){
   document.getElementById('modalBody').innerHTML = body;
   modal.classList.add('open');
   lockScroll();
+  history.pushState({fsgModal:true}, '');
   if(!p.docUrl) bindCarousel(p);
 }
 
@@ -987,9 +988,21 @@ function unlockScroll(){
   document.body.style.overflow='';
   window.scrollTo(0, savedScrollY);
 }
-function closeModal(){ modal.classList.remove('open'); lightbox.classList.remove('open'); unlockScroll(); }
+function closeModal(fromBack){
+  modal.classList.remove('open');
+  lightbox.classList.remove('open');
+  unlockScroll();
+  if(!fromBack && history.state && history.state.fsgModal) history.back();
+}
 document.getElementById('modalClose').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
+
+/* ===== 回退键关闭弹窗（安卓物理回退/手势） ===== */
+window.addEventListener('popstate', function(){
+  if(document.getElementById('vpnModal').classList.contains('open')) closeVpnModal(true);
+  else if(lightbox.classList.contains('open')) lightbox.classList.remove('open');
+  else if(modal.classList.contains('open')) closeModal(true);
+});
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
     if(document.getElementById('vpnModal').classList.contains('open')) closeVpnModal();
@@ -1044,10 +1057,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 function openVpnModal(){
   document.getElementById('vpnModal').classList.add('open');
   lockScroll();
+  history.pushState({fsgModal:true}, '');
 }
-function closeVpnModal(){
+function closeVpnModal(fromBack){
   document.getElementById('vpnModal').classList.remove('open');
   unlockScroll();
+  if(!fromBack && history.state && history.state.fsgModal) history.back();
 }
 document.getElementById('vpnClose').addEventListener('click',closeVpnModal);
 document.getElementById('vpnModal').addEventListener('click',e=>{if(e.target.id==='vpnModal')closeVpnModal();});
