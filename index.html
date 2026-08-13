@@ -1021,6 +1021,12 @@ const navLinks = document.getElementById('navLinks');
 menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 
+/* ===== 点击导航区域外空白处关闭菜单 ===== */
+document.addEventListener('click',function(e){
+  if(!navLinks.classList.contains('open')) return;
+  if(!e.target.closest('.nav')) navLinks.classList.remove('open');
+});
+
 /* ===== 锚点平滑滚动（仅点击时，不影响浏览器回退恢复） ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',function(e){
@@ -1090,27 +1096,29 @@ function copyVpnUrl(url){
   }
 }
 
-/* ===== 返回时恢复滚动位置（兼容安卓各内核） ===== */
+/* ===== 返回时恢复滚动位置（兼容微信 bfcache） ===== */
 (function(){
   window.addEventListener('pagehide', function(){
     sessionStorage.setItem('fsg_scrollY', String(window.scrollY || 0));
+    document.documentElement.style.visibility = 'hidden';
   });
   function restoreScroll(){
     var y = parseInt(sessionStorage.getItem('fsg_scrollY') || '0', 10);
     if(y > 0){
       window.scrollTo(0, y);
-      setTimeout(function(){
+      requestAnimationFrame(function(){
         window.scrollTo(0, y);
-        document.documentElement.style.visibility = '';
-      }, 120);
+        requestAnimationFrame(function(){
+          document.documentElement.style.visibility = '';
+        });
+      });
     } else {
       document.documentElement.style.visibility = '';
     }
     sessionStorage.removeItem('fsg_scrollY');
   }
-  window.addEventListener('pageshow', function(e){
-    if(e.persisted){ restoreScroll(); }
-    else if(sessionStorage.getItem('fsg_scrollY')){ restoreScroll(); }
+  window.addEventListener('pageshow', function(){
+    if(sessionStorage.getItem('fsg_scrollY')){ restoreScroll(); }
   });
 })();
 </script>
