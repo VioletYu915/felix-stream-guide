@@ -27,13 +27,12 @@
   --maxw:1180px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
   font-family:'Poppins','Noto Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.7;
-  overflow-x:hidden;
+  overflow-x:clip;
 }
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
@@ -485,14 +484,14 @@ img{max-width:100%;display:block}
         <a href="https://weidian.com/item.html?itemID=7813284073&wfr=c&source=goods_home&ifr=itemdetail&sfr=app" target="_blank" rel="noopener" class="link-row">
           <div class="lr-left">
             <div class="lr-ic">🎯</div>
-            <div class="lr-txt"><b>宝石站 · 金蛋孵化器</b><span>今年最重要项目 · 支持合作曲和新cover</span></div>
+            <div class="lr-txt"><b>宝石站 · 金蛋孵化器</b><span>今年最重要项目 · 支持新歌曲和cover</span></div>
           </div>
           <span class="go">↗</span>
         </a>
         <a href="https://weidian.com/item.html?itemID=7816272106&wfr=c&sfr=app&source=goods_home" target="_blank" rel="noopener" class="link-row">
           <div class="lr-left">
             <div class="lr-ic">🎯</div>
-            <div class="lr-txt"><b>菲首 · 馥馥奶粉罐</b><span>今年最重要项目 · 支持合作曲和新cover</span></div>
+            <div class="lr-txt"><b>菲首 · 馥馥奶粉罐</b><span>今年最重要项目 · 支持新歌曲和cover</span></div>
           </div>
           <span class="go">↗</span>
         </a>
@@ -900,7 +899,7 @@ function openModal(p){
   `;
   document.getElementById('modalBody').innerHTML = body;
   modal.classList.add('open');
-  document.body.style.overflow='hidden';
+  lockScroll();
   if(!p.docUrl) bindCarousel(p);
 }
 
@@ -978,7 +977,16 @@ document.getElementById('lbNext').onclick = ()=>{ if(currentPlatform) lbShow(cur
 lightbox.addEventListener('click',e=>{ if(e.target===lightbox) lightbox.classList.remove('open'); });
 
 /* ===== 关闭逻辑 ===== */
-function closeModal(){ modal.classList.remove('open'); lightbox.classList.remove('open'); document.body.style.overflow=''; }
+let savedScrollY = 0;
+function lockScroll(){
+  savedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+  document.body.style.overflow='hidden';
+}
+function unlockScroll(){
+  document.body.style.overflow='';
+  window.scrollTo(0, savedScrollY);
+}
+function closeModal(){ modal.classList.remove('open'); lightbox.classList.remove('open'); unlockScroll(); }
 document.getElementById('modalClose').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
 document.addEventListener('keydown',e=>{
@@ -1012,14 +1020,27 @@ const navLinks = document.getElementById('navLinks');
 menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 
+/* ===== 锚点平滑滚动（仅点击时，不影响浏览器回退恢复） ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const id = this.getAttribute('href');
+    if(id.length<2) return;
+    const target = document.querySelector(id);
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+
 /* ===== 梯子推荐弹窗 ===== */
 function openVpnModal(){
   document.getElementById('vpnModal').classList.add('open');
-  document.body.style.overflow='hidden';
+  lockScroll();
 }
 function closeVpnModal(){
   document.getElementById('vpnModal').classList.remove('open');
-  document.body.style.overflow='';
+  unlockScroll();
 }
 document.getElementById('vpnClose').addEventListener('click',closeVpnModal);
 document.getElementById('vpnModal').addEventListener('click',e=>{if(e.target.id==='vpnModal')closeVpnModal();});
