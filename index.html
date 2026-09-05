@@ -613,17 +613,17 @@ img{max-width:100%;display:block}
             <div class="ic-sub">点击下载安装包</div>
           </div>
         </div>
-        <a class="link-row" href="https://wwbcx.lanzout.com/iOx3w410zxdc" target="_blank" rel="noopener">
+        <a class="link-row" href="https://wwbcx.lanzout.com/iOx3w410zxdc" target="_blank" rel="noopener" onclick="copyLanzou('ftij')">
           <div class="lr-left">
             <div class="lr-ic">📦</div>
-            <div class="lr-txt"><b>安大师</b><span>提取码：ftij · 蓝奏云下载</span></div>
+            <div class="lr-txt"><b>安大师</b><span>提取码: ftij · 点击复制并跳转</span></div>
           </div>
           <span class="go">↗</span>
         </a>
-        <a class="link-row" href="https://wwbcx.lanzout.com/iy08p41101wf" target="_blank" rel="noopener">
+        <a class="link-row" href="https://wwbcx.lanzout.com/iy08p41101wf" target="_blank" rel="noopener" onclick="copyLanzou('g6ia')">
           <div class="lr-left">
             <div class="lr-ic">📦</div>
-            <div class="lr-txt"><b>Melon</b><span>提取码：g6ia · 蓝奏云下载</span></div>
+            <div class="lr-txt"><b>Melon</b><span>提取码: g6ia · 点击复制并跳转</span></div>
           </div>
           <span class="go">↗</span>
         </a>
@@ -914,6 +914,7 @@ const platforms = [
     id:'spotify', emoji:'🟢', name:'Spotify', kr:'스포티파이', color:'#1db954', level:'core', diff:2,
     imgDir:'Spotify', imgCount:0,
     docUrl:'https://my.feishu.cn/docx/EwVwd4iEOowgODx9121cSckmnlg',
+    weiboUrl:'https://weibo.com/7823566244/5104221525116419',
     desc:'全球最大流媒体平台，计入 Billboard 全球榜，海外打榜主力，免费即可参与。',
     note:'免费用户可在Spotify上搜索FELIX Stream Station，使用海外音源站建立的歌单刷流媒。记得关注Felix的Spotify艺人主页。'
   },
@@ -921,6 +922,7 @@ const platforms = [
     id:'stationhead', emoji:'📻', name:'Stationhead', kr:'스테이션헤드', color:'#ff5500', level:'core', diff:1,
     imgDir:'Stationhead', imgCount:0, emojiIcon:true,
     docUrl:'https://my.feishu.cn/docx/CVIfdNpLNoL9f8xcpFKcJ4Lwn1f',
+    weiboUrl:'https://weibo.com/7736985191/5109704159659724',
     desc:'粉丝刷流媒神器，播放会同步计入 Spotify / Apple Music 真实流媒，组织群常用工具。',
     note:'电脑端可登录网页链接https://www.stationhead.com/felixradio使用。'
   },
@@ -928,6 +930,7 @@ const platforms = [
     id:'melon', emoji:'🍉', name:'Melon', kr:'멜론', color:'#00cd3c', level:'core', diff:3,
     imgDir:'Melon', imgCount:0, emojiIcon:true,
     docUrl:'https://my.feishu.cn/docx/T7Wjd6uvpo8XxuxY6hicyjuWnKe',
+    weiboUrl:'https://weibo.com/7736985191/5108892902884581',
     desc:'韩国最大音源平台，打歌一位权重最高，回归期必刷的核心阵地。',
     note:'Melon 反作弊严格，禁止脚本/挂机/重复循环，违规播放会被过滤且可能封号。Melon搜索歌名找不到时可搜索Felix韩文名필릭스来找歌曲。'
   },
@@ -935,6 +938,7 @@ const platforms = [
     id:'itunes', emoji:'💿', name:'iTunes', kr:'아이튠즈', color:'#9b4dff', level:'core', diff:3,
     imgDir:'iTunes', imgCount:0,
     docUrl:'https://my.feishu.cn/docx/IdIddSBxFoqh8LxFkv2cYmEWnrj',
+    weiboUrl:'https://weibo.com/7736985191/5110490592707518',
     desc:'数字单曲购买平台，购买计入 Billboard 销量榜，回归首日冲销量的关键渠道。',
     note:'iTunes 必须付费购买才能计入销量榜，需要海外 Apple ID，国区账号无法使用。'
   },
@@ -943,6 +947,7 @@ const platforms = [
     id:'apple', emoji:'🍎', name:'Apple Music', kr:'애플 뮤직', color:'#fc5c7d', level:'imp', diff:2,
     imgDir:'Apple music', imgCount:0,
     docUrl:'https://my.feishu.cn/docx/Ou1gdaOJ0oIHgIxszIFcT8vXnXf',
+    weiboUrl:'https://weibo.com/7736985191/5110497185893829',
     desc:'计入 Billboard 全球榜，iOS 用户打榜方便，需付费订阅。',
     note:'Apple Music 必须付费订阅，播放才计入榜单。优先使用美区账号。'
   },
@@ -950,6 +955,7 @@ const platforms = [
     id:'youtube', emoji:'▶️', name:'YouTube Music', kr:'유튜브 뮤직', color:'#ff0000', level:'imp', diff:2,
     imgDir:'YouTube Music', imgCount:0,
     docUrl:'https://my.feishu.cn/docx/PVB6dFM0roBN2UxMWipcMSNRnme',
+    weiboUrl:'https://weibo.com/7736985191/5200040756251368',
     desc:'计入 Billboard 全球榜，海外粉丝主力渠道，免费即可参与。',
     note:'可在YouTube上搜索关注FELIX Stream Station，使用海外音源站提供的播放列表刷流媒。'
   },
@@ -958,6 +964,7 @@ const platforms = [
     id:'qqmusic', emoji:'🎶', name:'QQ音乐', kr:'QQ Music', color:'#31c27c', level:'aux', diff:1,
     imgDir:'QQ音乐', imgCount:0,
     docUrl:'https://my.feishu.cn/docx/Hbs4d0Le4ooYFdxwhDxc2UVQnSI',
+    weiboUrl:'https://weibo.com/7736985191/5108901548921549',
     desc:'国内主流音源平台，计入部分中文榜单，作为国内辅助支持渠道。',
     note:'国内平台权重较低，仅作辅助支持，回归期仍以核心海外平台为主。'
   },
@@ -965,6 +972,7 @@ const platforms = [
     id:'netease', emoji:'☁️', name:'网易云音乐', kr:'NetEase Music', color:'#c20c0c', level:'aux', diff:1,
     imgDir:'网易云音乐', imgCount:0,
     docUrl:'https://my.feishu.cn/docx/TJOBdHRkxoY5daxYy28cpoxGnKc',
+    weiboUrl:'https://weibo.com/7736985191/5110504672204519',
     desc:'国内平台，计入部分榜单，评论区互动可提升热度，辅助渠道。',
     note:'国内平台权重较低，仅作辅助支持，建议配合核心平台一起打榜。'
   }
@@ -1029,8 +1037,9 @@ function openModal(p){
     dotsHtml += `<span class="${i===0?'on':''}" data-i="${i}"></span>`;
   }
 
-  const tutorialBlock = p.docUrl
-    ? `<a href="${p.docUrl}" target="_blank" rel="noopener" style="display:block;margin:20px 0;font-size:15px;font-weight:600;color:#1f2937;font-style:italic;text-decoration:underline;text-underline-offset:4px">📖 打开教程文档</a>`
+  const linkUrl = p.weiboUrl || p.docUrl;
+  const tutorialBlock = linkUrl
+    ? `<a href="${linkUrl}" target="_blank" rel="noopener" style="display:block;margin:20px 0;font-size:15px;font-weight:600;color:#1f2937;font-style:italic;text-decoration:underline;text-underline-offset:4px">📖 打开图文教程</a>`
     : `<div class="carousel" id="carousel">
         <button class="car-btn prev" id="carPrev" aria-label="上一张">‹</button>
         <div class="car-viewport" id="carViewport">
@@ -1276,12 +1285,13 @@ function copyTaobaoCode(code){
     showCopyToast('口令已复制，打开淘宝App即可弹出商品');
   }
 }
-function showCopyToast(msg){
+function showCopyToast(msg, duration){
   const toast = document.createElement('div');
   toast.textContent = msg || '✅ 已复制';
-  toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:14px 24px;border-radius:12px;font-size:14px;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.25);animation:fadeIn .3s';
+  toast.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:14px 24px;border-radius:12px;font-size:14px;font-weight:600;z-index:999;box-shadow:0 8px 24px rgba(0,0,0,.25);animation:fadeIn .3s';
   document.body.appendChild(toast);
-  setTimeout(()=>{ toast.style.opacity='0'; toast.style.transition='opacity .4s'; setTimeout(()=>toast.remove(),400); },2200);
+  const t = duration || 2200;
+  setTimeout(()=>{ toast.style.opacity='0'; toast.style.transition='opacity .4s'; setTimeout(()=>toast.remove(),400); },t);
 }
 function copyVpnUrl(url){
   if(navigator.clipboard && navigator.clipboard.writeText){
@@ -1295,6 +1305,19 @@ function copyVpnUrl(url){
     document.execCommand('copy');
     document.body.removeChild(ta);
     showCopyToast('链接已复制，请在浏览器中打开');
+  }
+}
+function copyLanzou(code){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(code).catch(()=>{});
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = code;
+    ta.style.cssText = 'position:fixed;left:-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
   }
 }
 
