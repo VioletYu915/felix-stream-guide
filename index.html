@@ -1058,8 +1058,8 @@ function openModal(p){
     ${p.note?`<div class="modal-note">⚠️ ${p.note}</div>`:''}
     ${tutorialBlock}
     <div class="modal-cta">
-      <a href="#team" class="btn btn-ghost" onclick="closeModal()">👥 加入组织</a>
-      <a href="#funding" class="btn btn-primary" onclick="closeModal()">💰 立即打榜</a>
+      <a href="#team" class="btn btn-ghost" onclick="return goSection('#team')">👥 加入组织</a>
+      <a href="#funding" class="btn btn-primary" onclick="return goSection('#funding')">💰 立即打榜</a>
     </div>
   `;
   document.getElementById('modalBody').innerHTML = body;
@@ -1157,6 +1157,14 @@ function closeModal(fromBack){
   lightbox.classList.remove('open');
   unlockScroll();
   if(!fromBack && history.state && history.state.fsgModal) history.back();
+}
+function goSection(hash){
+  closeModal();
+  setTimeout(function(){
+    const target = document.querySelector(hash);
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  }, 120);
+  return false;
 }
 document.getElementById('modalClose').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
@@ -1309,16 +1317,22 @@ function copyVpnUrl(url){
 }
 function copyLanzou(code){
   if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(code).catch(()=>{});
+    navigator.clipboard.writeText(code).catch(()=>copyLanzouFallback(code));
   } else {
-    const ta = document.createElement('textarea');
-    ta.value = code;
-    ta.style.cssText = 'position:fixed;left:-9999px';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
+    copyLanzouFallback(code);
   }
+}
+function copyLanzouFallback(code){
+  const ta = document.createElement('textarea');
+  ta.value = code;
+  ta.setAttribute('readonly','');
+  ta.style.cssText = 'position:fixed;top:0;left:-9999px';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  ta.setSelectionRange(0, ta.value.length);
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
 }
 
 /* ===== 返回时恢复滚动位置（兼容微信 bfcache） ===== */
