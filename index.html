@@ -613,17 +613,17 @@ img{max-width:100%;display:block}
             <div class="ic-sub">点击下载安装包</div>
           </div>
         </div>
-        <a class="link-row" href="https://wwbcx.lanzout.com/iOx3w410zxdc" target="_blank" rel="noopener" onclick="copyLanzou('ftij')">
+        <a class="link-row" href="https://wwbcx.lanzout.com/iOx3w410zxdc" target="_blank" rel="noopener">
           <div class="lr-left">
             <div class="lr-ic">📦</div>
-            <div class="lr-txt"><b>安大师</b><span>提取码: ftij · 点击复制并跳转</span></div>
+            <div class="lr-txt"><b>安大师</b><span>提取码: ftij · 蓝奏云下载</span></div>
           </div>
           <span class="go">↗</span>
         </a>
-        <a class="link-row" href="https://wwbcx.lanzout.com/iy08p41101wf" target="_blank" rel="noopener" onclick="copyLanzou('g6ia')">
+        <a class="link-row" href="https://wwbcx.lanzout.com/iy08p41101wf" target="_blank" rel="noopener">
           <div class="lr-left">
             <div class="lr-ic">📦</div>
-            <div class="lr-txt"><b>Melon</b><span>提取码: g6ia · 点击复制并跳转</span></div>
+            <div class="lr-txt"><b>Melon</b><span>提取码: g6ia · 蓝奏云下载</span></div>
           </div>
           <span class="go">↗</span>
         </a>
@@ -1314,25 +1314,6 @@ function copyVpnUrl(url){
     document.body.removeChild(ta);
     showCopyToast('链接已复制，请在浏览器中打开');
   }
-}
-function copyLanzou(code){
-  if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(code).catch(()=>copyLanzouFallback(code));
-  } else {
-    copyLanzouFallback(code);
-  }
-}
-function copyLanzouFallback(code){
-  const ta = document.createElement('textarea');
-  ta.value = code;
-  ta.setAttribute('readonly','');
-  ta.style.cssText = 'position:fixed;top:0;left:-9999px';
-  document.body.appendChild(ta);
-  ta.focus();
-  ta.select();
-  ta.setSelectionRange(0, ta.value.length);
-  try{ document.execCommand('copy'); }catch(e){}
-  document.body.removeChild(ta);
 }
 
 /* ===== 返回时恢复滚动位置（兼容微信 bfcache） ===== */
